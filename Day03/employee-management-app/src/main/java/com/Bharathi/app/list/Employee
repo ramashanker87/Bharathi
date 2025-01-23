@@ -1,0 +1,37 @@
+package com.rama.app.list;
+
+import com.rama.app.Employee;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class ListEmployee {
+  public static void main(String[] args) {
+    List<Employee> EmployeeList=new ArrayList<>();
+    Employee Employee1= new Employee("ep1",20,"xzycompany","2222",20000);
+    Employee Employee2= new Employee("ep1",20,"xzycompany","2222",20000);
+    Employee Employee3= new Employee("ep1",20,"xzycompany","2222",20000);
+    Employee Employee4= new Employee("ep1",20,"xzycompany","2222",20000");
+    Employee Employee5= new Employee("ep1",20,"xzycompany","2222",20000");
+
+    EmployeeList.add(Employee1);
+    EmployeeList.add(Employee2);
+    EmployeeList.add(Employee3);
+    EmployeeList.add(Employee4);
+    EmployeeList.add(Employee5);
+    EmployeeList.add(Employee6);
+    EmployeeList.add(Employee7);
+    for (Employee Employee : EmployeeList) {
+      Employee.print();
+    }
+    System.out.println("Employee Greater than 23");
+    List<Employee> Employee23PlusAge=EmployeeList.stream()
+        .filter(Employee -> Employee.getAge()>23)
+        .collect(Collectors.toList());
+    for (Employee Employee : Employee23PlusAge) {
+      Employee.print();
+    }
+  }
+
+}
