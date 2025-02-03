@@ -21,15 +21,15 @@ public class SecurityConfig {
   @Bean
   public UserDetailsService userDetailsService() {
     UserDetails admin = User.withUsername("admin1")
-        .password(passwordEncoder()
-            .encode("password1"))
-        .roles("ADMIN")
-        .build();
+            .password(passwordEncoder()
+                    .encode("password1"))
+            .roles("ADMIN")
+            .build();
     UserDetails user = User.withUsername("user1")
-        .password(passwordEncoder()
-            .encode("password1"))
-        .roles("USER")
-        .build();
+            .password(passwordEncoder()
+                    .encode("password1"))
+            .roles("USER")
+            .build();
     return new InMemoryUserDetailsManager(admin,user);
   }
 
@@ -42,15 +42,15 @@ public class SecurityConfig {
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
     http
-        .csrf(csrf -> csrf.disable()) // Disable CSRF for APIs
-        .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/greet").hasRole("USER")
-            .requestMatchers("/hello").hasRole("ADMIN")
-            .requestMatchers("/hi").hasRole("ADMIN")
-            .requestMatchers("/thanks").hasRole("ADMIN")
-            .anyRequest().authenticated()
-        )
-        .httpBasic(withDefaults());
+            .csrf(csrf -> csrf.disable()) // Disable CSRF for APIs
+            .authorizeHttpRequests(auth -> auth
+                    .requestMatchers("/greet").hasRole("USER")
+                    .requestMatchers("/hello").hasRole("ADMIN")
+                    .requestMatchers("/hi").hasRole("ADMIN")
+                    .requestMatchers("/thanks").hasRole("ADMIN")
+                    .anyRequest().authenticated()
+            )
+            .httpBasic(withDefaults());
     return http.build();
   }
 
