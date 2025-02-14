@@ -1,13 +1,13 @@
-package com.bharathi.app.patient_management_app;
+package app.bharathi.com.sqs_Patient;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PatientManagementAppApplication {
+public class SqsPatientApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PatientManagementAppApplication.class, args);
+		SpringApplication.run(SqsPatientApplication.class, args);
 	}
 
 }
