@@ -1,0 +1,19 @@
+package com.student.app;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class StudentAppApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(StudentAppApplication.class, args);
+	}
+
+}
+@Request Controller
+@RequestMapping ('/student')
+public Class Stusent Controller {
+	@autowired
+			private Student serivice:studentserice
+}
