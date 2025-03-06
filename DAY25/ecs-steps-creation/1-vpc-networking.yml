@@ -107,6 +107,7 @@ Outputs:
     Export:
       Name: 'PublicSubnet2Id'
 
+
 #  Network and Host Breakdown:
 #   Network Address: The starting address of the network (10.0.0.0).
 #  Broadcast Address: The last address in the range, used for broadcasting to all devices in the network (10.0.255.255).

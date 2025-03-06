@@ -11,7 +11,7 @@ Resources:
   ALB:
     Type: AWS::ElasticLoadBalancingV2::LoadBalancer
     Properties:
-      Name: "MicroserviceALB"
+      Name: "MicroserviceALBPriya"
       Scheme: internet-facing
       Subnets:
         - !ImportValue PublicSubnet1Id
@@ -41,7 +41,7 @@ Resources:
   ALBTargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
-      Name: "MicroserviceTargetGroup"
+      Name: "MicroserviceTargetGroupPriya"
       Port: 8080
       Protocol: HTTP
       VpcId: !ImportValue VPCId
@@ -69,18 +69,18 @@ Outputs:
     Description: 'ALB ARN'
     Value: !Ref ALB
     Export:
-      Name: 'ALBArn'
+      Name: 'ALBArnPriya'
   ALBTargetGroupId:
     Description: 'ALB Target Group ID'
     Value: !Ref ALBTargetGroup
     Export:
-      Name: 'ALBTargetGroupId'
+      Name: 'ALBTargetGroupIdPriya'
 
   ALBSecurityGroupId:
     Description: 'ALB Security Group ID'
     Value: !Ref ALBSecurityGroup
     Export:
-      Name: 'ALBSecurityGroupId'
+      Name: 'ALBSecurityGroupIdPriya'
 
   ALBDnsName:
     Description: "DNS name of the ALB"

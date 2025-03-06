@@ -19,7 +19,7 @@ Resources:
 
 Outputs:
   ServiceSecurityGroupId:
-    Description: 'ECS Service Security Group ID bharathi'
+    Description: 'ECS Service Security Group ID'
     Value: !Ref ServiceSecurityGroup
     Export:
-      Name: 'ServiceSecurityGroupId'
+      Name: 'ServiceSecurityGroupIdbharathi'
