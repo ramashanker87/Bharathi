@@ -4,7 +4,7 @@
 
 ## Create ECR for parking 
 
-    aws cloudformation deploy --template-file 1-parking-ecr-template.yml --stack-name rama-parking-ecr-repo 
+    aws cloudformation deploy --template-file 1-parking-ecr-template.yml --stack-name priya-parking-ecr-repo 
 
 ### Login to ECR (for Docker):
 
@@ -12,11 +12,11 @@
 
 ### Tag Image with ECR Repository URL:
 
-    docker tag parking-app:latest 975050323630.dkr.ecr.us-east-1.amazonaws.com/rama-parking-app:latest
+    docker tag parking-app:latest 975050323630.dkr.ecr.us-east-1.amazonaws.com/priya-parking-app:latest
 
 ### Push images:
 
-    docker push 975050323630.dkr.ecr.us-east-1.amazonaws.com/rama-parking-app
+    docker push 975050323630.dkr.ecr.us-east-1.amazonaws.com/priya-parking-app
 
 ### Create VPC Networking(Created only once)
 
@@ -24,24 +24,24 @@
 
 ### Create Load Balancer and integrate with VPC
 
-    aws cloudformation deploy --template-file 3-1-load-balancer.yml --stack-name rama-load-balancer
+    aws cloudformation deploy --template-file 3-1-load-balancer.yml --stack-name priya-load-balancer
 
 ### Create Security Group
 
-    aws cloudformation deploy --template-file 3-2-security-groups.yml --stack-name rama-security-group
+    aws cloudformation deploy --template-file 3-2-security-groups.yml --stack-name priya-security-group
 
 
 ### Create Dynamodb Infrastructure
 
-    aws cloudformation deploy --template-file 4-create-dynamodb.yml --stack-name rama-dynamodb 
+    aws cloudformation deploy --template-file 4-create-dynamodb.yml --stack-name priya-dynamodb 
 
 ## Create ECS Cluster infra
 
-    aws cloudformation deploy --template-file 5-ecs-cluster.yml --stack-name rama-ecs-parking-cluster --capabilities CAPABILITY_NAMED_IAM 
+    aws cloudformation deploy --template-file 5-ecs-cluster.yml --stack-name priya-ecs-parking-cluster --capabilities CAPABILITY_NAMED_IAM 
 
 ## Create ECS Service and Task infra
 
-    aws cloudformation deploy --template-file 6-ecs-service-task.yml  --stack-name rama-ecs-service-task-parking --capabilities CAPABILITY_NAMED_IAM 
+    aws cloudformation deploy --template-file 6-ecs-service-task.yml  --stack-name priya-ecs-service-task-parking --capabilities CAPABILITY_NAMED_IAM 
 
 ## Start Parking
 

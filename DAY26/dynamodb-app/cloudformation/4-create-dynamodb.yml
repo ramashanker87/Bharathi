@@ -3,7 +3,7 @@ Resources:
   MyDynamoDBTable:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: 'rama-parking-status'
+      TableName: 'bharathi-parking-status'
       AttributeDefinitions:
         - AttributeName: carRegNo
           AttributeType: S

@@ -6,7 +6,7 @@ Parameters:
     Default: test
   ShortSolution:
     Type: String
-    Default: rama
+    Default: priya
 
 Resources:
   EcsCluster:
@@ -23,5 +23,5 @@ Outputs:
   EcsClusterTraining:
     Value: !Ref EcsCluster
     Export:
-      Name: 'RamaEcsParkingCluster'
+      Name: 'bharathiEcsParkingCluster'
 
